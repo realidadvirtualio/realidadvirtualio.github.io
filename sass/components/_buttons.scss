@@ -1,0 +1,169 @@
+/*
+* 16. Buttons
+* ====================
+*/
+
+// Button General Styles
+.btn {
+  display: inline-block;
+  text-align: center;
+  line-height: 1.2;
+  white-space: nowrap;
+  max-width: 100%;
+  letter-spacing: 0.04em;
+  border-style: solid;
+  text-overflow: ellipsis;
+  border-radius: 40px;
+  cursor: pointer;
+  vertical-align: middle;
+  position: relative;
+  z-index: 1;
+  text-decoration: none;
+  &:hover {
+    color: inherit;
+    text-decoration: none;
+  }
+  .icon{
+    float: left;
+    vertical-align: middle;
+  }
+}
+
+// Button Layout Styles
+
+.btn-xs {
+  padding: 12px 31px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn-sm {
+  border-width: 2px;
+  padding: 13px 32px;
+  font-size: 17px;
+
+  .icon{
+    font-size: 16px;
+    padding: 0 1px;
+  }
+}
+
+.btn-md {
+  padding: 14px 40px;
+  font-size: 16px;
+
+  @media(min-width: 992px){
+    padding: 18px 48px;
+  }
+
+  .icon{
+    float: right;
+    margin-left: 17px;
+    vertical-align: middle;
+  }
+}
+
+.btn-lg {
+  padding: 14px 42px;
+  font-size: 16px;
+
+  @media(min-width: 1200px){
+    padding: 18px 58px;
+  }
+
+  .icon{
+    float: none;
+    margin-left: 15px;
+  }
+}
+
+// Button Appearance Styles
+.btn-primary {
+  color: $white;
+  @include gradient-bg(left);
+  border-radius: 40px;
+  border: none;
+  
+  &:after{
+    content: '';
+    position: absolute;
+    z-index: -5;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    transition: .3s all ease-out;
+    @include gradient-bg(right);
+  }
+ 
+  &:hover{ color: $white; &:after{ opacity: 1; }}
+ 
+  &:focus{ color: $white; outline: none; }
+ 
+  &:active{
+    color: $white;
+    background: $brand-primary;
+    box-shadow: none;
+   
+    &:focus{ background: $brand-primary; outline: none; }
+  }
+}
+
+.btn-default {
+  font-size: 16px;
+  color: #333;
+  background-color: #E1F9ED;
+  text-shadow: 1px 0px 2px rgba(0, 0, 0, .05);
+  box-shadow: 2px 2px 5px 0px rgba(33, 33, 33, .1);
+  border: none;
+  
+  &:after{
+    content: '';
+    position: absolute;
+    z-index: -5;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+    transition: .3s all ease-out;
+    @include gradient-bg(left);
+  }
+
+  &:hover:after{ opacity: 1; }
+  
+  &:focus:active{ border: none; }
+
+  &:active, &:focus{
+    background: $brand-primary;
+    box-shadow: none;
+    outline: none;
+    border: none;
+  }
+ 
+  &:active:focus{ color: $white; 
+    background: $brand-primary; 
+    outline: none; 
+    border: none;
+  }
+}
+
+.form{
+  .btn-submit{
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    height: 38px;
+    padding: 9px;
+    border-radius: 50px;
+    
+    &:hover:after{ border-radius: 50px; }
+  }
+}
+

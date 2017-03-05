@@ -1,0 +1,188 @@
+/*
+* 18. Pricing Box
+* ====================
+*/
+
+.pricing-box-item{
+  padding-bottom: 60px;
+  z-index: 5;
+
+  @media(min-width: 768px){
+    padding-bottom: 70px;
+  }
+
+  .divider{
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: $brand-primary;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    @media(min-width: 768px){
+      margin-bottom: 35px;
+    }
+  }
+
+  a.icon{
+    &::after{
+      content: '';
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      border-radius: 50%;
+      background-color: transparent;
+      -webkit-animation: pulse 2s infinite;
+      animation: pulse 2s infinite;
+      display: block;
+    }
+  }
+  
+  h3{
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  
+  h5{
+    font-weight: 500;
+    letter-spacing: 0.05em;
+  }
+  
+  h6{ 
+    line-height: 35px;
+    letter-spacing: 0.024em;
+
+    @media(min-width: 768px){
+       line-height: 45px;
+     } 
+  }
+  
+  .btn{
+    padding: 16px 59px;
+    font-weight: 400;
+    letter-spacing: 0.024em;
+  }
+  
+  * + .btn{ 
+    margin-top: 20px; 
+
+    @media(min-width: 768px){
+      margin-top: 39px;
+    }
+  }
+ 
+  .popup{
+    width: 29px;
+    height: 29px;
+    font-size: 12px;
+    line-height: 30px;
+    position: absolute;
+    top: 238px;
+    right: 63px;
+    
+    .plus, .minus{
+      width: 29px;
+      height: 29px;
+      line-height: 31px;
+    }
+  }
+}
+
+.pricing-box-body{ 
+  margin-top: 25px; 
+
+  @media(min-width: 768px){
+    margin-top: 52px;
+  }
+}
+
+.pricing-box-primary{
+  position: relative;
+  right: 0;
+  z-index: 50;
+  background: #fff;
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.1);
+  transition: .3s all ease;
+  
+  h6{ color: #000; }
+
+  &:hover{ 
+    box-shadow: 12px 2px 50px 0px rgba(0, 0, 0, 0.1);
+    transition: .3s all ease;
+  }
+ 
+  .pricing-box-heading{
+    padding-top: 45px;
+    background: #F9F9F9;
+    box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.1);
+    
+    a:hover{ color: #fff; }
+    
+    .divider{ margin-bottom: 0; margin-top: 16px; }
+
+    @media(min-width: 768px){
+      padding-top: 54px;
+    }
+  }
+  
+  .popover-content{ color: #000; }
+}
+
+.pricing-box-default{
+  position: relative;
+  top: 0;
+  right: 0;
+  background: #356950;
+  
+  .pricing-box-heading{
+    padding-top: 45px;
+    background: #2A5440;
+    
+    a:hover{ color: #000; }
+    
+    .divider{ margin-bottom: 0; }
+
+    @media(min-width: 768px){
+      padding-top: 54px;
+    }
+  }
+ 
+  h6{ color: #fff; }
+ 
+  .popup{
+    color: #000;
+    background: #fff;
+    
+    &:hover{ color: #000; }
+  }
+
+  .popover{ 
+    color: #000; 
+ 
+    .popover-title{ color: #000; }
+  }
+ 
+  .divider{
+    background: #E1F9ED;
+  }
+ 
+  .btn{
+    padding: 16px 26px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+   
+    &:active:focus{ border: none; }
+   
+    &:active, &:focus{ color: #fff; }
+  }
+}
+
+@media(min-width: $screen-sm-min){
+  .pricing-box-primary{ right: -51px; }
+  
+  .pricing-box-default{ top: 68px; right: 47px; }
+}
+

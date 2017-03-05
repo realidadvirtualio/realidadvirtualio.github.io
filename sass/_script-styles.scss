@@ -1,0 +1,287 @@
+/*
+* 21. Script styles
+* ========================================
+*/
+
+@import "extensions/animate";
+@import "extensions/counter";
+@import "extensions/countdown";
+@import "extensions/magnific-popup";
+@import "extensions/owl-carousel";
+@import "extensions/navigation";
+@import "extensions/slick";
+@import "extensions/toTop";
+
+
+
+/*
+* Js form
+* ====================
+*/
+
+.js-form{
+  input{
+    &:required{
+      &:valid{
+        border-color: #1FB51D;
+      }
+    }
+
+    &:-webkit-autofill{
+      background-color: red !important;
+      color: red !important;
+    }
+  }
+}
+
+.js-result{
+  position: fixed;
+  bottom: -100px;
+  padding: 8px 20px;
+  color: #fff;
+  background-color: gray;
+  transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 3px;
+  box-shadow: 1px 4px 10px 0 rgba(0, 0, 0, 0.15);
+  z-index: 1200;
+
+  &.success,
+  &.error{
+    bottom: 20px;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.success{
+    background-color: #1FB51D;
+  }
+  &.error{
+    background-color: #EC6F28;
+  }
+}
+
+
+/*
+* Magnific Popup
+* ====================
+*/
+
+#small-dialog-1,
+#small-dialog-2,
+#small-dialog-3,
+#small-dialog-4,
+#small-dialog-5,
+#small-dialog-6,
+#small-dialog-7{
+  background: white;
+  padding: 0 0 15px 0;
+  text-align: left;
+  max-width: 800px;
+  margin: 40px auto;
+  position: relative;
+
+  .container{ padding: 50px; }
+  
+  img{ width: 100%; }
+  
+  p, a{ margin-top: 15px; }
+  
+  h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4,.h5, .h6{ margin-top: 40px; line-height: 1; font-family: $default-font-family; }
+  h3.sub-heading{ font-size: 30px; }
+  
+  h1{ margin: 0; }
+  
+  ul{ margin: 15px 0 0 0; }
+}
+
+/*
+* Particles JS
+* ==============
+*/
+
+#particles-js{
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #02180B;
+}
+
+
+/*
+* Mouseover parallax
+* ==============
+*/
+
+.parallax-element-1{
+  left: 130px!important;
+}
+
+.parallax-element-2{
+  opacity: 0.5;
+  top: -40%!important;
+  right: -170%!important;
+  z-index: -1;
+}
+
+.parallax-element-3{
+  top: -50%!important;
+  left: -120%!important;
+  z-index: -1;
+}
+
+.parallax-element-4{
+  top: -50%!important;
+  left: -90%!important;
+  z-index: -2;
+}
+
+
+/*
+* Popover
+* ==============
+*/
+
+.popup {
+  width: 44px;
+  height: 44px;
+  @include gradient-bg(left);
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  display: block;
+  position: absolute;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+
+  .plus, .minus {
+    width: 44px;
+    height: 44px;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    line-height: 46px;
+    text-align: center;
+    transition: .3s all ease-out;
+  }
+
+  .plus {
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+
+  .minus {
+    opacity: 0;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+
+  &::after{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: transparent;
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse 2s infinite;
+    display: block;
+  }
+
+  &:hover, &:focus{ color: #fff; }
+  
+  &:hover{ 
+    .plus{
+      opacity: 0;
+      -webkit-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+    
+    .minus{
+      opacity: 1;
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+    }
+  }
+}
+
+.popover {
+  border: none;
+  line-height: 20px;
+  z-index: 999;
+  max-width: 216px;
+  padding: 0;
+  
+  .popover-title{
+    padding: 3px 15px;
+    text-transform: none;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    margin: 0;
+    background: #E1F9ED;
+  }
+
+  .popover-content{
+    padding: 5px 15px 7px;
+    font-size: 14px;
+  }
+
+  .arrow{ bottom: -9px; }
+}
+
+.popup-1 {
+  top: 20%;
+  left: 0%;
+}
+
+.popup-2 {
+  top: 28%;
+  right: 47%;
+}
+
+.popup-3 {
+  top: 35%;
+  right: 25%;
+}
+
+
+/*
+* Map
+* ==============
+*/
+
+.map {
+  width: 100%; 
+  height: 300px; 
+  
+  &:after{
+    display: none;
+    content: 'Where you can find our office';
+    color: #fff;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    position: absolute;
+    top: 6%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .marker-popup{ color: #000; }
+
+  @media(min-width: 992px){
+    height: 454px;
+    
+    &:after{ display: block; }
+  }
+}

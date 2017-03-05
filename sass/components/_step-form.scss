@@ -1,0 +1,165 @@
+/*
+* Step Form
+* =======
+*/
+
+.form-box{
+  width: 600px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  @media (min-width: $screen-md-min) {
+    top: calc(50% + 49px);
+  }
+}
+
+.step-form {
+  padding: 30px 15px; 
+  background: #fff;
+  border-radius: 4px;
+
+  @media(min-width: 768px){
+    padding: 30px;
+  }
+
+  h2{ line-height: 1; }
+
+  .sub-title{ vertical-align: sub; }
+
+  select{ 
+    -webkit-appearance: menulist;
+    &:focus{ border: 1px solid #DDDDDD; } 
+  }
+
+  fieldset { display: none; }
+
+  .form-group{
+    position: relative; 
+
+    &:before, &:after{ content: none; }
+  }
+  
+  .touch-spinner{
+    .btn-default{
+      &:after{
+        content: none;
+      }
+      &:hover{
+        color: #fff;
+        background:$brand-primary;
+      }
+    }
+  }
+
+  .btn-default:hover{ color: #fff; }
+
+  .color-block{ margin-top: 17px; }
+
+  .form-control {
+    height: 44px;
+    padding: 6px 14px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    border-radius: 4px;
+    transition: .3s all ease;
+  }
+
+  textarea.form-control {
+    height: 90px;
+    line-height: 30px;
+  }
+
+  .input-error { border-color: #f35b3f; }
+
+  .btn-sm{
+    font-size: 14px;
+
+    @media(min-width: 768px){
+      font-size: 17px;
+    }
+  }
+
+  .step-form-steps { 
+    overflow: hidden; 
+    position: relative; 
+    margin-top: 20px; 
+
+    .step-form-progress { 
+      position: absolute; 
+      top: 24px; 
+      left: 0; 
+      width: 100%; 
+      height: 1px; 
+      background: #ddd;
+
+      .step-form-progress-line { 
+        position: absolute; 
+        top: 0; 
+        left: 0; 
+        height: 1px; 
+        background: $brand-primary; 
+      }
+    }
+
+    .step-form-step { 
+      position: relative; 
+      float: left; 
+      width: 33.333333%; 
+      padding: 0 5px; 
+      text-align: center;
+      p{ 
+        font-size: 14px; 
+        line-height: 1.2;
+        margin-top: 10px;
+        @media(min-width: 768px){
+          font-size: 16px;
+        }
+      }
+
+      .step-form-step-icon {
+        display: inline-block; 
+        width: 40px; 
+        height: 40px; 
+        margin-top: 4px; 
+        background: #ddd;
+
+        font-size: 16px; 
+        color: #fff; 
+        line-height: 40px;
+
+        border-radius: 50%;
+        transition: .3s all ease;
+      }
+
+      &.active{
+        p { color: $brand-primary; }
+
+        .step-form-step-icon{
+          width: 48px;
+          height: 48px;
+          margin-top: 0;
+          background: $brand-primary;
+          font-size: 22px;
+          line-height: 48px;
+          transition: .3s all ease;
+        }
+      }
+
+      &.activated{ 
+        p { color: $brand-primary; }
+
+        .step-form-step-icon{
+          background: #fff;
+          border: 1px solid $brand-primary;
+          color: $brand-primary;
+          line-height: 38px;
+        }
+      }
+    }
+  }
+  .btn + .btn{ margin-left: 10px; }
+  * + .form-group{ margin-top: 20px; }
+  * + fieldset{ margin-top: 20px; }
+}

@@ -1,0 +1,89 @@
+/*
+* 5. Type styles
+* ====================
+*/
+
+#{headings()} {
+  vertical-align: baseline;
+  display: block;
+  color: $gray-dark;
+  font-weight: 400;
+
+  a:focus, a:hover {
+    color: $brand-primary;
+    text-decoration: none;
+  }
+}
+
+h1, .h1 {
+  font-size: 40px;
+  line-height: 1.33;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 60px;
+    line-height: 1.16;
+  }
+
+  > .h2{
+    margin-bottom: rem(33px);
+  }
+}
+
+h2, .h2 {
+  font-size: 38px;
+  line-height: 1.5;
+
+  mark{
+    padding: 5px 60px;
+  }
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 50px;
+  }
+}
+
+h3, .h3 {
+  font-size: 28px;
+  line-height: 1.5;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 40px;
+    line-height: 30px;
+  }
+}
+
+h4, .h4 {
+  font-size: 26px;
+  line-height: 1.25;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 30px;
+  }
+}
+
+h5, .h5 {
+  font-size: 22px;
+  line-height: 1.5;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 25px;
+    line-height: 36px;
+  }
+}
+
+h6, .h6 {
+  font-size: 18px;
+
+  @media (min-width: $screen-sm-min) {
+    font-size: 20px;
+    line-height: 1.25;
+  }
+}
+
+
+mark {
+  display: inline-block;
+  padding: 5px;
+  color: #FFF;
+  background: $brand-primary;
+}

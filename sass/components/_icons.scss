@@ -1,0 +1,106 @@
+/*
+* 17. Icons
+* ====================
+*/
+
+// Icon General Styles
+.icon {
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.icon-circle{
+  color: #fff;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  line-height: 42px;
+  font-size: 30px;
+  @include gradient-bg(left);
+}
+
+.icon-circle-1{
+  font-size: 15px;
+  border: 3px solid $brand-primary;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  line-height: 55px;
+  background: transparent;
+  transition: .3s all ease-out;
+    
+  &:after{
+    content: '';
+    position: absolute;
+    opacity: 0;
+    z-index: -5;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border-radius: 40px;
+    transition: .3s all ease-out;
+    @include gradient-bg(left);
+  }
+  
+  &:hover{
+    border: 3px solid transparent;
+    color: #000;
+    
+    &:after{ opacity: 1; }
+  }
+}
+
+.icon-circle-2{
+  color: #fff;
+  border-radius: 50%;
+  width: 78px;
+  height: 78px;
+  line-height: 78px;
+  font-size: 28px;
+  margin-bottom: 63px;
+  
+  &:hover{ color: #fff; }
+  
+  &.fa-facebook{ background: #3B57A1; }
+  
+  &.fa-twitter{ background: #56ACEE;  }
+}
+
+.global-footer{
+  .icon-xs{ font-size: 17px; }
+}
+
+// Icon Sizing Styles
+.icon-xs{
+  font-size: 24px;
+}
+
+.icon-lg {
+  font-size: 42px;
+}
+
+.icon-xl{
+  font-size: 44px
+}
+
+// Icon Appearance Styles
+.icon-primary {
+  transition: .2s all ease-out;
+  color: #FFF;
+  @include gradient-bg(180deg);
+}
+
+.icon-block:hover{
+  .icon-primary{
+    width: 110px;
+    height: 110px;
+    line-height: 110px;
+    transform: scale(1.1);
+    box-shadow: 0px 0px 40px 3px rgba(0,0,0,0.15);
+  }
+}
+
+a.icon-primary:hover { background: darken($brand-primary, 5%); }
